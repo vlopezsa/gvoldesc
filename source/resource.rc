@@ -1,0 +1,33 @@
+#include <windows.h>
+#include "resource.h"
+
+IDI_CONFIG	 BITMAP "resources/config.bmp"
+IDI_DO		 BITMAP "resources/do.bmp"
+IDI_DO_CODE	 BITMAP "resources/do_code.bmp"
+IDI_OPEN	 BITMAP "resources/open.bmp"
+IDI_SAVE	 BITMAP "resources/save.bmp"
+IDI_SETTINGS BITMAP "resources/settings.bmp"
+
+
+menumain MENU
+BEGIN
+	POPUP "&File"
+	BEGIN
+		MENUITEM "&Open\tCtrl+O", IDM_OPEN
+		MENUITEM SEPARATOR
+		MENUITEM "&Exit\tAtl+F4", IDM_EXIT
+	END
+	POPUP "&Edit"
+	BEGIN
+		MENUITEM "&Get Code\tC", IDM_CODE
+		MENUITEM SEPARATOR
+		MENUITEM "Settings", IDM_CONF
+	END
+END
+
+accelmain ACCELERATORS
+BEGIN
+	"o",   IDM_OPEN, CONTROL, VIRTKEY
+	VK_F4, IDM_EXIT, ALT, VIRTKEY
+	"c",   IDM_CODE, VIRTKEY
+END
